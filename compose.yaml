@@ -14,6 +14,7 @@ services:
       - .env
     environment:
       NODE_ENV: development
+      DATABASE_URL: postgresql://${DATABASE_USER}:${DATABASE_PASSWORD}@postgres:5432/${DATABASE_NAME}?schema=public
     depends_on:
       postgres:
         condition: service_healthy
